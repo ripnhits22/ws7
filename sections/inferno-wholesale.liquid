@@ -1,0 +1,205 @@
+<div class="inferno-site">
+ <div class="inferno-announcement">{{ section.settings.announcement_text }}</div>
+ <header class="inferno-header">
+ <a class="inferno-logo" href="#inferno-top" aria-label="{{ section.settings.logo_word_1 }} {{ section.settings.logo_word_2 }} home">
+ <span>{{ section.settings.logo_word_1 }}</span><span>{{ section.settings.logo_word_2 }}</span>
+ </a>
+ <nav class="inferno-nav" aria-label="Main navigation">
+ <a href="#inferno-packs">{{ section.settings.nav_repacks }}</a>
+ <a href="#inferno-wholesale">{{ section.settings.nav_wholesale }}</a>
+ <a href="#inferno-about">{{ section.settings.nav_about }}</a>
+ </nav>
+ <a class="inferno-btn" href="#inferno-contact">{{ section.settings.header_button_text }}</a>
+ </header>
+
+ <main id="inferno-top">
+ <section class="inferno-hero">
+ <div class="inferno-hero__copy">
+ <p class="inferno-eyebrow">{{ section.settings.hero_eyebrow }}</p>
+ <h1 class="inferno-title">{{ section.settings.hero_heading }}<br><em>{{ section.settings.hero_emphasis }}</em></h1>
+ <p>{{ section.settings.hero_description }}</p>
+ <div class="inferno-actions">
+ <a class="inferno-btn" href="#inferno-contact">{{ section.settings.hero_primary_button }}</a>
+ <a class="inferno-btn inferno-btn--ghost" href="#inferno-packs">{{ section.settings.hero_secondary_button }}</a>
+ </div>
+ </div>
+ <div class="inferno-hero__art" role="button" tabindex="0" aria-label="{{ section.settings.hero_art_label }}">
+ <img class="pack-a" src="{{ 'obsidian.png' | asset_url }}" alt="{{ section.settings.hero_pack_alt_1 }}">
+ <img class="pack-b" src="{{ 'infernal.png' | asset_url }}" alt="{{ section.settings.hero_pack_alt_2 }}">
+ <img class="pack-c" src="{{ 'hellfire.png' | asset_url }}" alt="{{ section.settings.hero_pack_alt_3 }}">
+ </div>
+ </section>
+
+ <section id="inferno-packs" class="inferno-section">
+ <div class="inferno-section__head">
+ <div><p class="inferno-eyebrow">{{ section.settings.lineup_eyebrow }}</p><h2 class="inferno-heading">{{ section.settings.lineup_heading }}</h2></div>
+ <p>{{ section.settings.lineup_description }}</p>
+ </div>
+ <div class="inferno-grid">
+ {% for block in section.blocks %}
+ {% if block.type == 'pack' %}
+ <article class="inferno-card" tabindex="0" aria-label="{{ block.settings.name }}. {{ section.settings.pack_interaction_label }}" {{ block.shopify_attributes }}>
+ <div class="inferno-card__image"><img src="{{ block.settings.asset_filename | asset_url }}" alt="{{ block.settings.image_alt }}" loading="lazy"></div>
+ <div class="inferno-card__copy">
+ <h3>{{ block.settings.name }}</h3>
+ <p>{{ block.settings.subtitle }}</p>
+ <a class="inferno-btn" href="#inferno-contact">{{ block.settings.button_text }}</a>
+ </div>
+ </article>
+ {% endif %}
+ {% endfor %}
+ </div>
+ </section>
+
+ <section id="inferno-wholesale" class="inferno-wholesale">
+ <p class="inferno-eyebrow">{{ section.settings.process_eyebrow }}</p>
+ <h2 class="inferno-heading">{{ section.settings.process_heading }}</h2>
+ <div class="inferno-steps">
+ {% for block in section.blocks %}
+ {% if block.type == 'step' %}
+ <article class="inferno-step" {{ block.shopify_attributes }}>
+ <b>{{ block.settings.number }}</b><h3>{{ block.settings.heading }}</h3><p>{{ block.settings.description }}</p>
+ </article>
+ {% endif %}
+ {% endfor %}
+ </div>
+ </section>
+
+ <section id="inferno-about" class="inferno-about">
+ <div><p class="inferno-eyebrow">{{ section.settings.about_eyebrow }}</p><h2 class="inferno-heading">{{ section.settings.about_heading }}</h2></div>
+ <p>{{ section.settings.about_description }}</p>
+ </section>
+
+ <section id="inferno-contact" class="inferno-contact">
+ <p class="inferno-eyebrow">{{ section.settings.contact_eyebrow }}</p>
+ <h2 class="inferno-heading">{{ section.settings.contact_heading }}</h2>
+ <p>{{ section.settings.contact_description }}</p>
+ {% form 'contact', class: 'inferno-form' %}
+ {% if form.posted_successfully? %}<p class="inferno-success">{{ section.settings.success_message }}</p>{% endif %}
+ {{ form.errors | default_errors }}
+ <div class="inferno-fields">
+ <input required type="text" name="contact[name]" placeholder="{{ section.settings.name_placeholder }}">
+ <input required type="email" name="contact[email]" placeholder="{{ section.settings.email_placeholder }}">
+ <input type="text" name="contact[company]" placeholder="{{ section.settings.company_placeholder }}">
+ <input type="tel" name="contact[phone]" placeholder="{{ section.settings.phone_placeholder }}">
+ <select name="contact[estimated_volume]">
+ <option value="">{{ section.settings.volume_placeholder }}</option>
+ <option>{{ section.settings.volume_option_1 }}</option>
+ <option>{{ section.settings.volume_option_2 }}</option>
+ <option>{{ section.settings.volume_option_3 }}</option>
+ <option>{{ section.settings.volume_option_4 }}</option>
+ </select>
+ <textarea name="contact[body]" placeholder="{{ section.settings.message_placeholder }}"></textarea>
+ </div>
+ <button class="inferno-btn" type="submit">{{ section.settings.contact_button_text }}</button>
+ {% endform %}
+ </section>
+ </main>
+ <footer class="inferno-footer">
+ <div class="inferno-logo"><span>{{ section.settings.logo_word_1 }}</span><span>{{ section.settings.logo_word_2 }}</span></div>
+ <p>{{ section.settings.footer_text }}</p>
+ </footer>
+</div>
+
+{% schema %}
+{
+ "name": "Inferno wholesale site",
+ "settings": [
+ {"type":"header","content":"Announcement and header"},
+ {"type":"text","id":"announcement_text","label":"Announcement text","default":"WHOLESALE REPACKS FOR SHOPS, BREAKERS, AND STREAMERS"},
+ {"type":"text","id":"logo_word_1","label":"Logo first word","default":"INFERNO"},
+ {"type":"text","id":"logo_word_2","label":"Logo second word","default":"PACKS"},
+ {"type":"text","id":"nav_repacks","label":"Repacks navigation label","default":"Repacks"},
+ {"type":"text","id":"nav_wholesale","label":"Wholesale navigation label","default":"Wholesale"},
+ {"type":"text","id":"nav_about","label":"About navigation label","default":"About"},
+ {"type":"text","id":"header_button_text","label":"Header button text","default":"Book a call"},
+
+ {"type":"header","content":"Hero"},
+ {"type":"text","id":"hero_eyebrow","label":"Hero eyebrow","default":"WHOLESALE REPACKS"},
+ {"type":"text","id":"hero_heading","label":"Hero heading","default":"Built for stores."},
+ {"type":"text","id":"hero_emphasis","label":"Hero emphasized line","default":"Made to get ripped."},
+ {"type":"textarea","id":"hero_description","label":"Hero description","default":"Premium repacks for card shops, breakers, streamers, and event sellers. No public pricing. Every order is built around your volume and business needs."},
+ {"type":"text","id":"hero_primary_button","label":"Hero primary button","default":"Book a wholesale call"},
+ {"type":"text","id":"hero_secondary_button","label":"Hero secondary button","default":"View the lineup"},
+ {"type":"text","id":"hero_art_label","label":"Hero image accessibility label","default":"Inferno repack lineup."},
+ {"type":"text","id":"hero_pack_alt_1","label":"Hero left pack alt text","default":"Obsidian repack"},
+ {"type":"text","id":"hero_pack_alt_2","label":"Hero center pack alt text","default":"Infernal repack"},
+ {"type":"text","id":"hero_pack_alt_3","label":"Hero right pack alt text","default":"Hellfire repack"},
+
+ {"type":"header","content":"Lineup section"},
+ {"type":"text","id":"lineup_eyebrow","label":"Lineup eyebrow","default":"THE LINEUP"},
+ {"type":"text","id":"lineup_heading","label":"Lineup heading","default":"Repacks"},
+ {"type":"textarea","id":"lineup_description","label":"Lineup description","default":"Six premium pack designs available for wholesale programs. Contact us for minimums, lead times, customization, and fulfillment options."},
+ {"type":"text","id":"pack_interaction_label","label":"Pack interaction accessibility text","default":"Interactive pack display"},
+
+ {"type":"header","content":"Wholesale process"},
+ {"type":"text","id":"process_eyebrow","label":"Process eyebrow","default":"HOW IT WORKS"},
+ {"type":"text","id":"process_heading","label":"Process heading","default":"A wholesale program built around your business."},
+
+ {"type":"header","content":"About section"},
+ {"type":"text","id":"about_eyebrow","label":"About eyebrow","default":"ABOUT INFERNO"},
+ {"type":"text","id":"about_heading","label":"About heading","default":"Designed to stand out before the pack is even opened."},
+ {"type":"textarea","id":"about_description","label":"About description","default":"Inferno Packs supplies high-impact repacks for retailers and content-driven sellers. Our focus is presentation, consistency, and wholesale relationships—not one-off consumer sales."},
+
+ {"type":"header","content":"Contact section"},
+ {"type":"text","id":"contact_eyebrow","label":"Contact eyebrow","default":"WHOLESALE INQUIRY"},
+ {"type":"text","id":"contact_heading","label":"Contact heading","default":"Book a call to purchase."},
+ {"type":"textarea","id":"contact_description","label":"Contact description","default":"Send your details and we’ll follow up about wholesale availability."},
+ {"type":"text","id":"success_message","label":"Success message","default":"Thanks. We received your request."},
+ {"type":"text","id":"name_placeholder","label":"Name field placeholder","default":"Name"},
+ {"type":"text","id":"email_placeholder","label":"Email field placeholder","default":"Email"},
+ {"type":"text","id":"company_placeholder","label":"Company field placeholder","default":"Company / store"},
+ {"type":"text","id":"phone_placeholder","label":"Phone field placeholder","default":"Phone"},
+ {"type":"text","id":"volume_placeholder","label":"Volume dropdown placeholder","default":"Estimated pack volume"},
+ {"type":"text","id":"volume_option_1","label":"Volume option 1","default":"100–499"},
+ {"type":"text","id":"volume_option_2","label":"Volume option 2","default":"500–999"},
+ {"type":"text","id":"volume_option_3","label":"Volume option 3","default":"1,000–4,999"},
+ {"type":"text","id":"volume_option_4","label":"Volume option 4","default":"5,000+"},
+ {"type":"text","id":"message_placeholder","label":"Message field placeholder","default":"Tell us about your business and what you need"},
+ {"type":"text","id":"contact_button_text","label":"Contact button text","default":"Request a wholesale call"},
+
+ {"type":"header","content":"Footer"},
+ {"type":"text","id":"footer_text","label":"Footer text","default":"Wholesale repacks."}
+ ],
+ "blocks": [
+ {
+ "type":"pack",
+ "name":"Pack",
+ "limit":6,
+ "settings":[
+ {"type":"text","id":"name","label":"Pack name","default":"Inferno Pack"},
+ {"type":"text","id":"subtitle","label":"Pack subtitle","default":"Wholesale repack"},
+ {"type":"text","id":"button_text","label":"Pack button text","default":"Ask about wholesale"},
+ {"type":"text","id":"asset_filename","label":"Pack asset filename","default":"emerald.png","info":"Use an existing file in the theme Assets folder, such as emerald.png."},
+ {"type":"text","id":"image_alt","label":"Pack image alt text","default":"Inferno repack"}
+ ]
+ },
+ {
+ "type":"step",
+ "name":"Process step",
+ "limit":3,
+ "settings":[
+ {"type":"text","id":"number","label":"Step number","default":"01"},
+ {"type":"text","id":"heading","label":"Step heading","default":"Book a call"},
+ {"type":"textarea","id":"description","label":"Step description","default":"Tell us about your shop, channel, event, or resale program."}
+ ]
+ }
+ ],
+ "presets": [
+ {
+ "name":"Inferno wholesale site",
+ "blocks":[
+ {"type":"pack","settings":{"name":"Emerald","asset_filename":"emerald.png","image_alt":"Emerald repack"}},
+ {"type":"pack","settings":{"name":"Blaze","asset_filename":"blaze.png","image_alt":"Blaze repack"}},
+ {"type":"pack","settings":{"name":"Hellfire","asset_filename":"hellfire.png","image_alt":"Hellfire repack"}},
+ {"type":"pack","settings":{"name":"Ignite","asset_filename":"ignite.png","image_alt":"Ignite repack"}},
+ {"type":"pack","settings":{"name":"Infernal","asset_filename":"infernal.png","image_alt":"Infernal repack"}},
+ {"type":"pack","settings":{"name":"Obsidian","asset_filename":"obsidian.png","image_alt":"Obsidian repack"}},
+ {"type":"step","settings":{"number":"01","heading":"Book a call","description":"Tell us about your shop, channel, event, or resale program."}},
+ {"type":"step","settings":{"number":"02","heading":"Build your order","description":"Choose pack styles, quantities, and any custom requirements."}},
+ {"type":"step","settings":{"number":"03","heading":"Launch your drop","description":"Receive your packs and start selling, breaking, or distributing."}}
+ ]
+ }
+ ]
+}
+{% endschema %}

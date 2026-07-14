@@ -1,0 +1,106 @@
+{
+ "sections": {
+ "inferno_wholesale": {
+ "type": "inferno-wholesale",
+ "settings": {},
+ "blocks": {
+ "pack_base": {
+ "type": "pack",
+ "settings": {
+ "name": "Emerald",
+ "subtitle": "Wholesale repack",
+ "button_text": "Ask about wholesale",
+ "asset_filename": "emerald.png",
+ "image_alt": "Emerald repack"
+ }
+ },
+ "pack_blaze": {
+ "type": "pack",
+ "settings": {
+ "name": "Blaze",
+ "subtitle": "Wholesale repack",
+ "button_text": "Ask about wholesale",
+ "asset_filename": "blaze.png",
+ "image_alt": "Blaze repack"
+ }
+ },
+ "pack_hellfire": {
+ "type": "pack",
+ "settings": {
+ "name": "Hellfire",
+ "subtitle": "Wholesale repack",
+ "button_text": "Ask about wholesale",
+ "asset_filename": "hellfire.png",
+ "image_alt": "Hellfire repack"
+ }
+ },
+ "pack_ignite": {
+ "type": "pack",
+ "settings": {
+ "name": "Ignite",
+ "subtitle": "Wholesale repack",
+ "button_text": "Ask about wholesale",
+ "asset_filename": "ignite.png",
+ "image_alt": "Ignite repack"
+ }
+ },
+ "pack_infernal": {
+ "type": "pack",
+ "settings": {
+ "name": "Infernal",
+ "subtitle": "Wholesale repack",
+ "button_text": "Ask about wholesale",
+ "asset_filename": "infernal.png",
+ "image_alt": "Infernal repack"
+ }
+ },
+ "pack_obsidian": {
+ "type": "pack",
+ "settings": {
+ "name": "Obsidian",
+ "subtitle": "Wholesale repack",
+ "button_text": "Ask about wholesale",
+ "asset_filename": "obsidian.png",
+ "image_alt": "Obsidian repack"
+ }
+ },
+ "step_one": {
+ "type": "step",
+ "settings": {
+ "number": "01",
+ "heading": "Book a call",
+ "description": "Tell us about your shop, channel, event, or resale program."
+ }
+ },
+ "step_two": {
+ "type": "step",
+ "settings": {
+ "number": "02",
+ "heading": "Build your order",
+ "description": "Choose pack styles, quantities, and any custom requirements."
+ }
+ },
+ "step_three": {
+ "type": "step",
+ "settings": {
+ "number": "03",
+ "heading": "Launch your drop",
+ "description": "Receive your packs and start selling, breaking, or distributing."
+ }
+ }
+ },
+ "block_order": [
+ "pack_base",
+ "pack_blaze",
+ "pack_hellfire",
+ "pack_ignite",
+ "pack_infernal",
+ "pack_obsidian",
+ "step_one",
+ "step_two",
+ "step_three"
+ ]
+ }
+ },
+ "order": ["inferno_wholesale"]
+}
