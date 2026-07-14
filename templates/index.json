@@ -1,106 +1,160 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
- "sections": {
- "inferno_wholesale": {
- "type": "inferno-wholesale",
- "settings": {},
- "blocks": {
- "pack_base": {
- "type": "pack",
- "settings": {
- "name": "Emerald",
- "subtitle": "Wholesale repack",
- "button_text": "Ask about wholesale",
- "asset_filename": "emerald.png",
- "image_alt": "Emerald repack"
- }
- },
- "pack_blaze": {
- "type": "pack",
- "settings": {
- "name": "Blaze",
- "subtitle": "Wholesale repack",
- "button_text": "Ask about wholesale",
- "asset_filename": "blaze.png",
- "image_alt": "Blaze repack"
- }
- },
- "pack_hellfire": {
- "type": "pack",
- "settings": {
- "name": "Hellfire",
- "subtitle": "Wholesale repack",
- "button_text": "Ask about wholesale",
- "asset_filename": "hellfire.png",
- "image_alt": "Hellfire repack"
- }
- },
- "pack_ignite": {
- "type": "pack",
- "settings": {
- "name": "Ignite",
- "subtitle": "Wholesale repack",
- "button_text": "Ask about wholesale",
- "asset_filename": "ignite.png",
- "image_alt": "Ignite repack"
- }
- },
- "pack_infernal": {
- "type": "pack",
- "settings": {
- "name": "Infernal",
- "subtitle": "Wholesale repack",
- "button_text": "Ask about wholesale",
- "asset_filename": "infernal.png",
- "image_alt": "Infernal repack"
- }
- },
- "pack_obsidian": {
- "type": "pack",
- "settings": {
- "name": "Obsidian",
- "subtitle": "Wholesale repack",
- "button_text": "Ask about wholesale",
- "asset_filename": "obsidian.png",
- "image_alt": "Obsidian repack"
- }
- },
- "step_one": {
- "type": "step",
- "settings": {
- "number": "01",
- "heading": "Book a call",
- "description": "Tell us about your shop, channel, event, or resale program."
- }
- },
- "step_two": {
- "type": "step",
- "settings": {
- "number": "02",
- "heading": "Build your order",
- "description": "Choose pack styles, quantities, and any custom requirements."
- }
- },
- "step_three": {
- "type": "step",
- "settings": {
- "number": "03",
- "heading": "Launch your drop",
- "description": "Receive your packs and start selling, breaking, or distributing."
- }
- }
- },
- "block_order": [
- "pack_base",
- "pack_blaze",
- "pack_hellfire",
- "pack_ignite",
- "pack_infernal",
- "pack_obsidian",
- "step_one",
- "step_two",
- "step_three"
- ]
- }
- },
- "order": ["inferno_wholesale"]
+  "sections": {
+    "inferno_wholesale": {
+      "type": "inferno-wholesale",
+      "blocks": {
+        "pack_base": {
+          "type": "pack",
+          "settings": {
+            "name": "Emerald",
+            "subtitle": "Wholesale repack",
+            "button_text": "Ask about wholesale",
+            "asset_filename": "emerald.png",
+            "image_alt": "Emerald repack"
+          }
+        },
+        "pack_blaze": {
+          "type": "pack",
+          "settings": {
+            "name": "Blaze",
+            "subtitle": "Wholesale repack",
+            "button_text": "Ask about wholesale",
+            "asset_filename": "blaze.png",
+            "image_alt": "Blaze repack"
+          }
+        },
+        "pack_hellfire": {
+          "type": "pack",
+          "settings": {
+            "name": "Hellfire",
+            "subtitle": "Wholesale repack",
+            "button_text": "Ask about wholesale",
+            "asset_filename": "hellfire.png",
+            "image_alt": "Hellfire repack"
+          }
+        },
+        "pack_ignite": {
+          "type": "pack",
+          "settings": {
+            "name": "Ignite",
+            "subtitle": "Wholesale repack",
+            "button_text": "Ask about wholesale",
+            "asset_filename": "ignite.png",
+            "image_alt": "Ignite repack"
+          }
+        },
+        "pack_infernal": {
+          "type": "pack",
+          "settings": {
+            "name": "Infernal",
+            "subtitle": "Wholesale repack",
+            "button_text": "Ask about wholesale",
+            "asset_filename": "infernal.png",
+            "image_alt": "Infernal repack"
+          }
+        },
+        "pack_obsidian": {
+          "type": "pack",
+          "settings": {
+            "name": "Obsidian",
+            "subtitle": "Wholesale repack",
+            "button_text": "Ask about wholesale",
+            "asset_filename": "obsidian.png",
+            "image_alt": "Obsidian repack"
+          }
+        },
+        "step_one": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "heading": "Book a call",
+            "description": "Tell us about your shop, channel, event, or resale program."
+          }
+        },
+        "step_two": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "heading": "Build your order",
+            "description": "Choose pack styles, quantities, and any custom requirements."
+          }
+        },
+        "step_three": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "heading": "Launch your drop",
+            "description": "Receive your packs and start selling, breaking, or distributing."
+          }
+        }
+      },
+      "block_order": [
+        "pack_base",
+        "pack_blaze",
+        "pack_hellfire",
+        "pack_ignite",
+        "pack_infernal",
+        "pack_obsidian",
+        "step_one",
+        "step_two",
+        "step_three"
+      ],
+      "settings": {
+        "announcement_text": "WHOLESALE REPACKS FOR SHOPS, BREAKERS, AND STREAMERS",
+        "logo_word_1": "INFERNO",
+        "logo_word_2": "PACKS",
+        "nav_repacks": "Repacks",
+        "nav_wholesale": "Wholesale",
+        "nav_about": "About",
+        "header_button_text": "Book a call",
+        "hero_eyebrow": "WHOLESALE REPACKS",
+        "hero_heading": "Built for stores.",
+        "hero_emphasis": "Made to get ripped.",
+        "hero_description": "Premium repacks for card shops, breakers, streamers, and event sellers. No public pricing. Every order is built around your volume and business needs.",
+        "hero_primary_button": "Book a wholesale call",
+        "hero_secondary_button": "View the lineup",
+        "hero_art_label": "Inferno repack lineup.",
+        "hero_pack_alt_1": "Obsidian repack",
+        "hero_pack_alt_2": "Infernal repack",
+        "hero_pack_alt_3": "Hellfire repack",
+        "lineup_eyebrow": "THE LINEUP",
+        "lineup_heading": "Repacks",
+        "lineup_description": "Six premium pack designs available for wholesale programs. Contact us for minimums, lead times, customization, and fulfillment options.",
+        "pack_interaction_label": "Interactive pack display",
+        "process_eyebrow": "HOW IT WORKS",
+        "process_heading": "A wholesale program built around your business.",
+        "about_eyebrow": "ABOUT INFERNO",
+        "about_heading": "Designed to stand out before the pack is even opened.",
+        "about_description": "Inferno Packs supplies high-impact repacks for retailers and content-driven sellers. Our focus is presentation, consistency, and wholesale relationships—not one-off consumer sales.",
+        "contact_eyebrow": "WHOLESALE INQUIRY",
+        "contact_heading": "Book a call to purchase.",
+        "contact_description": "Send your details and we’ll follow up about wholesale availability.",
+        "success_message": "Thanks. We received your request.",
+        "name_placeholder": "Name",
+        "email_placeholder": "Email",
+        "company_placeholder": "Company / store",
+        "phone_placeholder": "Phone",
+        "volume_placeholder": "Estimated pack volume",
+        "volume_option_1": "1000-2499",
+        "volume_option_2": "2500-4999",
+        "volume_option_3": "5000-9999",
+        "volume_option_4": "10000+",
+        "message_placeholder": "Tell us about your business and what you need",
+        "contact_button_text": "Request a call",
+        "footer_text": "Wholesale repacks."
+      }
+    }
+  },
+  "order": [
+    "inferno_wholesale"
+  ]
 }
